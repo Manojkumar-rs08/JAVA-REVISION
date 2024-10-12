@@ -1,0 +1,91 @@
+package exception;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Mailexception extends Exception {
+
+public Mailexception(String mail)
+	
+{
+	  super(mail); 
+	  
+	  } 
+	
+static void mail() throws Mailexception{
+	  
+	  Scanner sc2 = new Scanner(System.in);
+		System.out.println(" enter the mail:");
+		String email = sc2.next();
+			
+		
+	if(email.toLowerCase().equals(email))
+	{
+		
+		
+	 if(email.contains("@gmail.com"))
+		
+		  { 
+			
+			System.out.println(email); 
+		  
+		  }
+	 else {
+		 System.out.println("please enter corrct format");
+		
+	 }
+		
+	 if(email.contains("@yahoo.com"))
+				
+				{
+			
+			System.out.println(email); 
+			
+				}
+	 else {
+		 System.out.println("please enter corrct format");
+	 }		
+	
+	}
+		  
+		  else { 
+			  
+			  throw new Mailexception("please enter correct format");
+		  }
+	
+
+	
+	
+}
+
+
+
+
+
+
+
+
+
+public static void main(String[] args) {
+	
+	
+	
+	try {
+		mail();
+	} 
+	
+	catch (InputMismatchException e) {
+		// TODO Auto-generated catch block
+	
+		System.out.println(" enter value text");
+	}
+	
+	catch (Mailexception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	
+}	
+	
+}

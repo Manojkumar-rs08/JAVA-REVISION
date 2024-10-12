@@ -1,0 +1,170 @@
+package credopertns;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
+import java.util.concurrent.ConcurrentHashMap;
+
+class Admin1 {
+	static Scanner sc = new Scanner(System.in);
+
+	String pname;
+	Integer pquantity;
+	Integer price;
+
+	Admin1(String pname, Integer pquantity, Integer price) {
+
+		this.pname = pname;
+		this.pquantity = pquantity;
+		this.price = price;
+	}
+
+	public String toString() {
+		return "Admin1 [pname=" + pname + ", pquantity=" + pquantity + ", price=" + price + "]";
+	}
+
+	static Map<Integer, Admin1> admin = new ConcurrentHashMap<Integer, Admin1>();
+
+	static void adminoptions() {
+		System.out.println("enter the option");
+		System.out.println("1-> Add item");
+		System.out.println("2-> update item");
+		System.out.println("3-> delete item");
+		System.out.println("4-> view cart");
+		System.out.println("5-> exit");
+		int op = sc.nextInt();
+
+		switch (op) {
+
+		case 1:
+			System.out.println("enter the product id");
+			Integer id = sc.nextInt();
+			System.out.println(" enter the product name");
+			String pname = sc.next();
+			System.out.println(" enter the quantity");
+			Integer pquantity = sc.nextInt();
+			System.out.println(" enter the price of product ");
+			Integer price = sc.nextInt();
+			admin.put(id, new Admin1(pname, pquantity, price));
+
+			System.out.println(admin);
+
+			adminoptions();
+			break;
+
+		case 2:
+
+			System.out.println("enter the id to update");
+			int updt = sc.nextInt();
+			for (HashMap.Entry<Integer, Admin1> m : admin.entrySet()) {
+
+				if (updt == m.getKey()) {
+
+					System.out.println("enter the product id");
+					Integer id1 = sc.nextInt();
+					System.out.println(" enter the product name");
+					String pname1 = sc.next();
+					System.out.println(" enter the quantity");
+					Integer pquantity1 = sc.nextInt();
+					System.out.println(" enter the price of product ");
+					Integer price1 = sc.nextInt();
+					admin.put(id1, new Admin1(pname1, pquantity1, price1));
+
+					System.out.println(admin);
+
+				}
+			}
+			adminoptions();
+			break;
+
+		case 3:
+
+			System.out.println("enter the id to remove");
+
+			int del = sc.nextInt();
+			if (admin.containsKey(del)) {
+
+				admin.remove(del);
+			} else {
+
+				System.out.println(" product id not valid");
+
+			}
+			adminoptions();
+			break;
+
+		case 4:
+
+			System.out.println(admin);
+
+			adminoptions();
+			break;
+		}
+	}
+	
+	
+static	void user() {
+		
+		System.out.println("enter the option");
+		
+		System.out.println("1-- view");
+		System.out.println("2-- purchase");
+		System.out.println("3-- purchase cart");
+		
+		int us = sc.nextInt();
+		
+		switch(us) {
+		case 1:	
+			
+			System.out.println(admin);
+			
+		case 2:
+			
+			System.out.println("enter the product id");
+			
+			int pur = sc.nextInt();
+			
+			if(admin.containsKey(pur)) {
+				
+				System.out.println(admin.get(pur));
+			}
+			
+			
+		
+		}
+	}
+	
+	
+	static void select() {
+	
+	
+	
+	System.out.println("select the cret ");
+	int sel = sc.nextInt();
+	System.out.println("1--admin");
+	System.out.println("2--user");
+	
+	switch(sel) {
+	
+	case 1:
+		
+		adminoptions();
+	case 2:
+		user();
+	}
+	
+	}
+}
+
+public class Adminuser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	Admin1.select();
+
+	}
+
+}

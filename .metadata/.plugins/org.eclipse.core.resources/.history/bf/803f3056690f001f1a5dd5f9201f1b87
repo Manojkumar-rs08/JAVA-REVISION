@@ -1,0 +1,57 @@
+package exception;
+
+import java.util.*;
+
+	
+public class Userdefinedexception extends Exception
+	  {
+	  
+	public  Userdefinedexception (String num){
+	 
+	  super(num); } 
+	   
+	  
+	  
+	 
+	static void name() throws Userdefinedexception{
+		  
+		  Scanner sc = new Scanner(System.in);
+			System.out.println(" enter the name:");
+			String name = sc.next();
+			
+			char check = name.charAt(0);
+			
+			
+		
+				
+
+			
+			if(Character.isUpperCase(check))
+			{
+				System.out.println(name);	
+			}
+		  
+			else {
+				throw new Userdefinedexception("first character must be uppercase");
+			}
+			
+	  }
+	  
+	public static void main(String[] args) 
+	{
+		
+	try {
+		name();
+	} catch (Userdefinedexception e) {
+		
+		e.printStackTrace();
+	}
+  
+
+	}
+
+	
+}	
+	
+
+

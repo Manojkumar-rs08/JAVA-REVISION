@@ -1,0 +1,39 @@
+package string;
+
+import java.util.Scanner;
+
+public class Stringequalname {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("enter the value");
+		
+		String ch = sc.next();
+		
+		String value = "/name=obeth/company=tcs";
+		
+		String [] s= value.split("/");
+		
+		
+		
+		for (int i=0;i<s.length;i++) {
+			
+			
+				if(ch.contains(s[i])) {
+					
+					System.out.println(s[i]);
+				}
+			
+				
+				
+			}
+			
+		}
+		
+			
+	}
+
+

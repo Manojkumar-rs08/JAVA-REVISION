@@ -1,0 +1,123 @@
+package credopertns;
+ 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Scanner;
+
+class Admin1 {
+	static Scanner sc = new Scanner(System.in);
+
+	String pname;
+	Integer pquantity;
+	Integer price;
+
+	Admin1(String pname, Integer pquantity, Integer price) {
+
+		this.pname = pname;
+		this.pquantity = pquantity;
+		this.price = price;
+	}
+
+	public String toString() {
+		return "Admin1 [pname=" + pname + ", pquantity=" + pquantity + ", price=" + price + "]";
+	}
+
+
+
+ 
+
+	
+	static void adminoptions() {
+		System.out.println("enter the option");
+		System.out.println("1-> Add item");
+		System.out.println("2-> update item");
+		System.out.println("3-> delete item");
+		System.out.println("4-> view cart");
+		System.out.println("5-> exit");
+		int op = sc.nextInt();
+		
+		List<Admin1> ll = new ArrayList<>();
+
+		   HashMap<Integer, Admin1> admin = new HashMap<Integer, Admin1>();
+
+
+		switch (op) {
+
+		case 1:
+
+			
+				System.out.println("enter the product id");
+				Integer id = sc.nextInt();
+				System.out.println(" enter the product name");
+				String pname = sc.next();
+				System.out.println(" enter the quantity name");
+				Integer pquantity = sc.nextInt();
+				System.out.println(" enter the price of product name");
+				Integer price = sc.nextInt();
+
+			admin.put(id, new Admin1(pname, pquantity, price));
+			admin.put(id, new Admin1(pname, pquantity, price));
+				System.out.println(admin);
+
+                 adminoptions();
+			break;
+
+		case 2:
+			
+			System.out.println("ENTER ID TO DELETE");
+			int del = sc.nextInt();
+			
+			
+			
+			if (admin.containsKey(del)) {
+
+				admin.remove(del);
+			}
+			else {
+				
+				System.out.println("product id not Available");
+			}
+			
+			System.out.println(admin);
+			
+			adminoptions();
+		
+			break;
+
+		case 3:
+			System.out.println("enter id to update");
+			
+		    int upd = sc.nextInt();
+			
+
+			
+			System.out.println(admin);
+
+		
+			adminoptions();
+			
+			break;
+
+		case 4:
+			System.out.println(admin);
+			break;
+
+		}
+
+		}
+
+	}
+
+
+
+public class Adminuser {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Admin1.adminoptions();
+
+	}
+
+}

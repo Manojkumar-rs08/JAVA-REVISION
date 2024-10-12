@@ -1,0 +1,27 @@
+package collection. classesinner;
+
+public class Memberinnerclass {
+	
+	private int a= 20;
+	
+	class innercl   /// inside the class to access the private variable//
+	{
+		void add()
+		{
+			System.out.println(a+30);
+		}
+		
+	}
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//Memberinnerclass ref = new Memberinnerclass(); 
+		
+		Memberinnerclass.innercl ref2 = new Memberinnerclass().new innercl();
+		
+		ref2.add();
+		
+	}
+
+}

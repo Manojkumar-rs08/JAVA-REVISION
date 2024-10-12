@@ -1,0 +1,29 @@
+package string;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Stringequalname {
+
+	
+public static void main(String args[]) {
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("enter the value");
+		
+		String ch = sc.next();
+		
+    HashMap<String, String>value = new HashMap<>();
+		
+		value.put("name", "sabri");
+		value.put("company", "congnizant");
+		
+		System.out.println(value.get(ch));
+		
+			
+		}
+		
+			
+	}
+
+

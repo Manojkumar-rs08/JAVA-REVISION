@@ -1,0 +1,124 @@
+package exception;
+
+import java.util.Scanner;
+
+
+
+public class Pswdexception extends Exception { 
+
+	public Pswdexception(String pswd) {
+
+		super(pswd);
+	}
+
+
+	static void pwd() throws Pswdexception{
+
+		Scanner sc2 = new Scanner(System.in);
+		System.out.println(" enter the pswd:");
+		String pswrd = sc2.next();
+		int ccount =0;
+		int scount =0;
+		int ncount =0;
+		int val=8;
+		for(int i=0;i<=pswrd.length()-1;i++){
+
+
+
+			if(pswrd.length()>=val) {
+
+
+				if(Character.isUpperCase(pswrd.charAt(i))) {
+
+					ccount++;
+				}
+
+
+				if(Character.isLowerCase(pswrd.charAt(i))) {
+					scount++;
+				}
+
+			}
+			else 
+			{
+
+
+				throw new Pswdexception("pswd length minimum 8 ");
+
+			}
+
+
+		}
+		
+		if(ccount>0&&scount>0) {
+		for(int i =0;i<=pswrd.length()-1;i++)	{
+		
+
+
+	if(pswrd.charAt(i)=='0'||pswrd.charAt(i)=='1'||pswrd.charAt(i)=='2'||pswrd.charAt(i)=='3'||pswrd.charAt(i)=='4'||pswrd.charAt(i)=='5'||pswrd.charAt(i)=='6'||pswrd.charAt(i)=='7'||pswrd.charAt(i)=='8'||pswrd.charAt(i)=='9') {
+
+					ncount++;
+				}
+	
+	else {
+		
+		System.out.println("please enter one number");
+	}
+			if(ncount>0) {
+
+
+					if(pswrd.charAt(i)=='~'||pswrd.charAt(i)=='`'||pswrd.charAt(i)=='!'||pswrd.charAt(i)=='@'||pswrd.charAt(i)=='#'||pswrd.charAt(i)=='$'||pswrd.charAt(i)=='^'||pswrd.charAt(i)=='&'||pswrd.charAt(i)=='('||pswrd.charAt(i)==')'||pswrd.charAt(i)=='_'||pswrd.charAt(i)=='-'||pswrd.charAt(i)=='+'||pswrd.charAt(i)=='='){
+						
+					}
+					
+					else {
+						
+						throw new Pswdexception ("please enter one  special character");
+					}
+					
+					
+					}
+					
+		}
+		System.out.println("your password" +pswrd);
+		}
+
+		
+				          
+			else
+			{
+				throw new Pswdexception("pswd contain one upper case & lower case "); 
+			}
+
+				
+
+		
+	
+
+	}
+	
+	
+
+
+
+
+
+
+
+
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		try {
+			pwd();
+		} catch (Pswdexception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+
+	}
+
+}

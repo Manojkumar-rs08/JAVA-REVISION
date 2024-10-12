@@ -1,0 +1,109 @@
+package collectionstask;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Votingmap {
+	int admkcount=0;
+	int dmkcount=0;
+	int ntkcount=0;
+	int congresscount=0;
+	int bjpcount=0;
+	int tvkcount=0;
+	
+	
+	void votecount() {
+		
+		
+		
+		
+		HashMap<Integer,String>vote= new HashMap<Integer,String>();
+		
+		vote.put(1, "admk-man");
+		vote.put(2, "dmk-sabri a");
+		vote.put(3, "ntk- seeman");
+		vote.put(4, "congress- manikam");
+		vote.put(5, "bjp-nayinar");
+		vote.put(6, "tvk-sulaiman sa");
+		System.out.println(vote);
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("ENTER THE VOTE");
+		int voting = sc.nextInt();
+		
+		
+		
+ String d=vote.get(voting);
+ 
+ 
+ if(d.equalsIgnoreCase("admk-man")) {
+	 
+	 admkcount++;
+	 
+        }
+ 
+
+ if(d.equalsIgnoreCase("dmk-sabri a")) {
+	 
+	 dmkcount++;
+	
+        }
+ 
+ if(d.equalsIgnoreCase("ntk-seeman")) {
+	 
+	 ntkcount++;
+	
+        }
+ 
+ if(d.equalsIgnoreCase("congress- manikam")) {
+	 
+	 congresscount++;
+	
+        }
+ if(d.equalsIgnoreCase("bjp-nayinar")) {
+	 
+	 bjpcount++;
+	
+        }
+if(d.equalsIgnoreCase("tvk-sulaiman sa")) {
+	 
+	 tvkcount++;
+	
+        }
+ 
+ 
+ 
+		System.out.println("admkcount :"+admkcount);
+		System.out.println("dmkcount :" +dmkcount);
+		System.out.println("ntkcount : " +ntkcount);
+		System.out.println("congresscount :"+congresscount);
+		System.out.println("bjpcount : " +bjpcount);
+		System.out.println("tvkcount  :" +tvkcount);
+		
+	if(admkcount==10||dmkcount==10||ntkcount==10||bjpcount==10||congresscount==10||tvkcount==10) {
+		
+	 System.out.println("voting hour over");
+	}
+	
+	else {
+		votecount();
+		
+	} 
+		
+		
+	
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	
+		Votingmap ref= new Votingmap();
+		ref.votecount();
+		
+		
+	}
+
+}

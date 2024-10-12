@@ -1,0 +1,84 @@
+package collectionstask;
+
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class Votingmap {
+	
+	
+	void votecount() {
+		
+		int admkcount=0;
+		int dmkcount=0;
+		int ntkcount=0;
+		int congresscount=0;
+		int bjpcount=0;
+		int tvkcount=0;
+		
+		
+		HashMap<Integer,String>vote= new HashMap<Integer,String>();
+		
+		vote.put(1, "admk-man");
+		vote.put(2, "dmk-sabri a");
+		vote.put(3, "ntk- seeman");
+		vote.put(4, "congress- manikam");
+		vote.put(5, "bjp-nayinar");
+		vote.put(6, "tvk-sulaiman sa");
+		System.out.println(vote);
+		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("ENTER THE VOTE");
+		int voting = sc.nextInt();
+		
+		if(vote.containsKey(voting))
+		{
+			admkcount++;
+		admkcount=	admkcount++;
+		System.out.println(admkcount);
+			
+		}
+		
+		
+		/*
+		 * if(vote.containsKey(voting)) {
+		 * 
+		 * dmkcount= dmkcount++; System.out.println(dmkcount);
+		 * 
+		 * }
+		 * 
+		 * if(vote.containsKey(voting)) {
+		 * 
+		 * ntkcount= ntkcount++; System.out.println(ntkcount);
+		 * 
+		 * }
+		 * 
+		 * if(vote.containsKey(voting)) {
+		 * 
+		 * congresscount= congresscount++; System.out.println(congresscount);
+		 * 
+		 * } if(vote.containsKey(voting)) {
+		 * 
+		 * bjpcount= bjpcount++; System.out.println(bjpcount);
+		 * 
+		 * } if(vote.containsKey(voting)) {
+		 * 
+		 * tvkcount= tvkcount++; System.out.println(tvkcount);
+		 * 
+		 * }
+		 */
+	
+	}
+	
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	
+		Votingmap ref= new Votingmap();
+		ref.votecount();
+		
+		
+	}
+
+}

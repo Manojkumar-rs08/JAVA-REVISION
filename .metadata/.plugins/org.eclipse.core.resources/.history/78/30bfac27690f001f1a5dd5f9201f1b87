@@ -1,0 +1,70 @@
+package exception;
+
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+public class Mailexception extends Exception {
+
+public Mailexception(String mail)
+	
+{
+	  super(mail); 
+	  
+	  } 
+	
+static void mail() throws Mailexception{
+	  
+	  Scanner sc2 = new Scanner(System.in);
+		System.out.println(" enter the mail:");
+		String email = sc2.next();
+			
+		
+	if(email.toLowerCase().equals(email))
+	{
+		
+		
+	 if(email.contains("@gmail.com")||email.contains("@yahoo.com"))
+		
+		  { 
+			
+			System.out.println(email); 
+		  
+		  }
+	 else {
+		 System.out.println("email must contain @gmail or @ymail");
+		
+	 }
+		
+	
+	
+	}
+		  
+		  else { 
+			  
+			  throw new Mailexception("please enter lower case");
+		  }
+	
+
+	
+	
+}
+
+public static void main(String[] args) {
+	
+	
+	
+	try {
+		mail();
+	} 
+	
+	
+	
+	catch (Mailexception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	
+}	
+	
+}

@@ -1,0 +1,29 @@
+package string;
+
+public class Stringparanthesis {
+
+	public static void main(String[] args) {
+		
+		int count = 0;
+		
+		String s = ")()";
+		
+		String[] s1 =s.split("");
+		
+		for(int i =0; i<s1.length;i++)
+		{
+			
+			
+			if(s1[i].equals("(")){
+			
+				s1[i].substring(0);
+				
+				//System.out.println(s1[i].length());
+			
+			}
+			
+			System.out.println(s1[i].length());
+	}
+	
+}
+}

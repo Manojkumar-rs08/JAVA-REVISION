@@ -1,0 +1,22 @@
+package string;
+
+public class Stringparanthesis {
+
+	public static void main(String[] args) {
+		
+		
+		int count =0;
+		String s = ")()";
+		
+		
+	System.out.println(	s.substring(1));
+			
+			
+	
+			
+	}			
+			
+	
+	
+		
+}

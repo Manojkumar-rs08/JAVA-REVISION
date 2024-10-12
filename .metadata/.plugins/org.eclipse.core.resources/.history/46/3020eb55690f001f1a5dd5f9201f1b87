@@ -1,0 +1,60 @@
+package exception;
+
+import java.util.Scanner;
+
+public class Numberexception extends Exception {
+
+	
+	
+	
+	public  Numberexception (String num2){
+		 
+		  super(num2); 
+		  } 
+		   
+		  
+		  
+		  static void number() throws Numberexception{
+			  
+			  Scanner sc2 = new Scanner(System.in);
+				System.out.println(" enter the phnnum:");
+				long phonenum = sc2.nextLong();
+				
+				
+			
+				String phnumlength = String.valueOf(phonenum)+"";
+				
+				
+				if(phnumlength.length()<10||phnumlength.length()>10)
+				
+				  { 
+					throw new Numberexception("please give phnon number 10 didgits"); 
+				  
+				  }
+				  
+				  else { 
+					  
+					  System.out.println(phonenum);
+					  
+				  }
+				 
+		  }
+		  
+	
+	
+	
+	
+	public static void main(String[] args) {
+		
+		
+		
+	try {
+		number();
+	} catch (Numberexception e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+
+	}
+
+}
